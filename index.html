@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Expense Tracker</h1>
+            <p>Track your spending. Save smarter.</p>
+        </header>
+
+        <section class="summary">
+            <div class="card">
+                <h3>Monthly Budget</h3>
+                <p id="budgetDisplay">₹0.00</p>
+            </div>
+            <div class="card">
+                <h3>Total Expenses</h3>
+                <p id="totalDisplay">₹0.00</p>
+            </div>
+            <div class="card">
+                <h3>Remaining Balance</h3>
+                <p id="balanceDisplay">₹0.00</p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Set Monthly Budget</h2>
+            <form id="budgetForm">
+                <input type="number" id="budgetInput"
+                    placeholder="Enter budget in ₹" min="0"
+                    step="0.01" required>
+                <button type="submit">Set Budget</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Add New Expense</h2>
+            <form id="expenseForm">
+                <input type="text" id="description"
+                    placeholder="Expense description" maxlength="100"
+                    required>
+
+                <input type="number" id="amount"
+                    placeholder="Amount in ₹" min="0.01"
+                    step="0.01" required>
+
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option>Food</option>
+                    <option>Transport</option>
+                    <option>Education</option>
+                    <option>Shopping</option>
+                    <option>Entertainment</option>
+                    <option>Hostel</option>
+                    <option>Other</option>
+                </select>
+
+                <input type="date" id="date" required>
+                <button type="submit">Add Expense</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="history-header">
+                <h2>Expense History</h2>
+                <select id="filterCategory">
+                    <option value="All">All Categories</option>
+                    <option>Food</option>
+                    <option>Transport</option>
+                    <option>Education</option>
+                    <option>Shopping</option>
+                    <option>Entertainment</option>
+                    <option>Hostel</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expenseList"></tbody>
+                </table>
+            </div>
+
+            <p id="emptyMessage">No expenses added yet.</p>
+        </section>
+
+        <footer>
+            <p>Student Expense Tracker | Mini Project</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
